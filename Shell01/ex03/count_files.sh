@@ -1,1 +1,1 @@
-ls -la | grep "total" | sed 's/total //'
+find . | wc -l | grep " " | sed 's/    //"
