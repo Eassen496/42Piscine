@@ -1,1 +1,1 @@
-find . | wc -l | grep " " | sed 's/    //"
+find . -type f -o -type d | wc -l | tr -d ' '

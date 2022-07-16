@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/13 12:24:36 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/14 11:17:09 by ale-roux         ###   ########.fr       */
+/*   Created: 2022/07/16 06:15:41 by ale-roux          #+#    #+#             */
+/*   Updated: 2022/07/16 06:42:07 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 
-void	ft_putchar(char c)
+int ft_strlen (char *str)
 {
-	write(1, &c, 1);
-}
+	int length;
 
-void	ft_is_negative(int n)
-{
-	if (n < 0)
+	length = 0;
+	while (str[length])
 	{
-		ft_putchar('N');
+		length++;
 	}
-	else
-	{
-		ft_putchar('P');
-	}
+	return (length);
 }

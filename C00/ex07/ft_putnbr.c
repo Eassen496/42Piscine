@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:24:36 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/14 11:17:09 by ale-roux         ###   ########.fr       */
+/*   Updated: 2022/07/15 09:30:56 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	int_to_char(int n)
 {
-	write(1, &c, 1);
+	char	c;
+
+	if (n < 10 && n >= 0)
+	{
+		c = 48 + n;
+		write(1, &c, 1);
+	}
 }
 
-void	ft_is_negative(int n)
+void	ft_putnbr(int nb)
 {
-	if (n < 0)
+	int	i;
+	
+	if (nb < 0){
+		write(1, "-", 1);
+		nb = -nb;
+	}
+	if (nb < 9 && nb > -1)
 	{
-		ft_putchar('N');
+		int_to_char(nb);
 	}
 	else
 	{
-		ft_putchar('P');
+		if (nb > 0)
+		{
+			i = nb % 10;
+			nb = nb / 10;
+			ft_putnbr(nb);
+			int_to_char(i);
+		}
 	}
 }
