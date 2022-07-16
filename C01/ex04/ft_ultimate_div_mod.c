@@ -6,14 +6,17 @@
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 10:26:45 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/15 10:32:52 by ale-roux         ###   ########.fr       */
+/*   Updated: 2022/07/16 07:27:43 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int c = *a;
-	int d = *b;
-	*a = c/d;
-	*b = c%d;
+	int	c;
+	int	d;
+
+	c = *a;
+	d = *b;
+	*a = c / d;
+	*b = c % d;
 }

@@ -6,14 +6,13 @@
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 06:15:41 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/16 06:42:07 by ale-roux         ###   ########.fr       */
+/*   Updated: 2022/07/16 07:30:18 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_strlen (char *str)
+int	ft_strlen(char *str)
 {
-	int length;
+	int	length;
 
 	length = 0;
 	while (str[length])

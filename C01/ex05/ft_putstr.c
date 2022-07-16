@@ -6,21 +6,21 @@
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 10:33:44 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/16 06:31:01 by ale-roux         ###   ########.fr       */
+/*   Updated: 2022/07/16 07:29:29 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-	int i;
-   
+	int	i;
+
 	while (str[i] != '\0')
 	{
 		ft_putchar(str[i]);
