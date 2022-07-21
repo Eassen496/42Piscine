@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 10:33:44 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/16 19:17:52 by ale-roux         ###   ########.fr       */
+/*   Created: 2022/07/20 19:08:05 by ale-roux          #+#    #+#             */
+/*   Updated: 2022/07/20 19:14:04 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_str_is_printable(char *str)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	while (str && (((*str >= 32) && (*str <= 126))))
+		str++;
+	if (*str)
+		return (0);
+	else
+		return (1);
 }

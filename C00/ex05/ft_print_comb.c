@@ -5,36 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 14:28:36 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/14 21:54:07 by ale-roux         ###   ########.fr       */
+/*   Created: 2022/07/19 19:14:17 by ale-roux          #+#    #+#             */
+/*   Updated: 2022/07/20 17:02:28 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	int_to_char(int a)
+void	int_to_char(int i, int j, int k)
 {
 	char	c;
+	char	d;
+	char	f;
 
-	c = a + 48;
+	c = i + 48;
+	d = j + 48;
+	f = k + 48;
 	write(1, &c, 1);
-}
-
-void	ft_print(int a, int b, int c)
-{
-	int_to_char(a);
-	int_to_char(b);
-	int_to_char(c);
-	if (a == 7 && b == 8 && c == 9)
-	{
-		ft_putchar('\n');
-	}
-	else
+	write(1, &d, 1);
+	write(1, &f, 1);
+	if (100 * i + 10 * j + k < 789)
 	{
 		write(1, ", ", 2);
 	}
@@ -42,24 +31,24 @@ void	ft_print(int a, int b, int c)
 
 void	ft_print_comb(void)
 {
-	int	a;
-	int	b;
-	int	c;
+	int	i;
+	int	j;
+	int	k;
 
-	a = 0;
-	while (a < 8)
+	i = 0;
+	while (i <= 7)
 	{
-		b = a + 1;
-		while (b < 9)
+		j = i + 1;
+		while (j <= 8)
 		{
-			c = b + 1;
-			while (c < 10)
+			k = j + 1;
+			while (k <= 9)
 			{
-				ft_print(a, b, c);
-				c++;
+				int_to_char(i, j, k);
+				k++;
 			}
-			b++;
+			j++;
 		}
-		a++;
+		i++;
 	}
 }

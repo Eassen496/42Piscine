@@ -6,7 +6,7 @@
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:24:36 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/15 09:30:56 by ale-roux         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:05:15 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ void	int_to_char(int n)
 void	ft_putnbr(int nb)
 {
 	int	i;
-	
-	if (nb < 0){
+
+	if (nb == -2147483648)
+		write(1, "-2147483648", 11);
+	else if (nb < 0)
+	{
 		write(1, "-", 1);
 		nb = -nb;
 	}
-	if (nb < 9 && nb > -1)
+	if (nb < 10 && nb > -1)
 	{
 		int_to_char(nb);
 	}

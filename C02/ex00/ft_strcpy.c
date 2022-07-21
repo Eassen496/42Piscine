@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 10:33:44 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/16 19:17:52 by ale-roux         ###   ########.fr       */
+/*   Created: 2022/07/17 10:03:59 by ale-roux          #+#    #+#             */
+/*   Updated: 2022/07/20 12:33:29 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
+char	*ft_strcpy(char *destination, char *source)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (source[i])
 	{
-		ft_putchar(str[i]);
+		destination[i] = source[i];
 		i++;
 	}
+	destination[i] = '\0';
+	return (destination);
 }

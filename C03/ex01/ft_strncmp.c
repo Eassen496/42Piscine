@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 10:33:44 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/16 19:17:52 by ale-roux         ###   ########.fr       */
+/*   Created: 2022/07/18 05:49:51 by ale-roux          #+#    #+#             */
+/*   Updated: 2022/07/20 16:46:45 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
-void	ft_putchar(char c)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
+	unsigned int	i;
+	int				result;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (n == 0)
+		return (0);
+	while (i < n && s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 	{
-		ft_putchar(str[i]);
+		if (s1[i] > s2[i])
+			result = -1;
+		if (s2[i] > s1[i])
+			result = 1;
 		i++;
 	}
+	if (s1[i] == '\0' || s2[i] == '\0')
+	{
+		if (s1[i] == '\0')
+			result = -1;
+		if (s2[i] == '\0')
+			result = 1;
+	}
+	return (result);
 }

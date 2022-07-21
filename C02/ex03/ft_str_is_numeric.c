@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-roux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 10:33:44 by ale-roux          #+#    #+#             */
-/*   Updated: 2022/07/16 19:17:52 by ale-roux         ###   ########.fr       */
+/*   Created: 2022/07/20 12:47:48 by ale-roux          #+#    #+#             */
+/*   Updated: 2022/07/20 13:33:39 by ale-roux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_str_is_numeric(char *str)
 {
-	write(1, &c, 1);
-}
+	unsigned int	num1;
+	unsigned int	num2;
+	unsigned int	result;
+	unsigned char	numerical;
 
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	num1 = 0;
+	num2 = 0;
+	result = 1;
+	numerical = 48;
+	while (str[num1] && result)
 	{
-		ft_putchar(str[i]);
-		i++;
+		if (str[num1] == numerical)
+		{
+			num1++;
+			num2 = 0;
+		}
+		else if (num2 < 10)
+			numerical = 48 + num2++;
+		else
+			result = 0;
 	}
+	return (result);
 }
